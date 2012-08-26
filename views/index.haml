@@ -1,0 +1,15 @@
+%html
+  %head
+    %title TSP Visualizer
+    %script{:type => 'text/javascript', :src => '/js/jquery-1.8.0.min.js'}
+    %script{:type => 'text/javascript', :src => '/js/highcharts.js'}
+    %script{:type => 'text/javascript', :src => '/js/exporting.js'}
+    %script{:type => 'text/javascript', :src => '/js/chart.js'}
+
+  %body
+    #menu-bar{:style => 'display: block; height: 30px; background: #666; padding: 5px 10px 0 0;'}
+      %select{ :name => 'tsp-list', :id => 'tsp-dropdown', :style => 'float:right;'}
+        - @tsp_files.sort.each do |file|
+          %option= file
+
+    #container{:style => 'min-width: 400px; height: 400px; margin: 0 auto;'}
